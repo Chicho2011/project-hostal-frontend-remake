@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/eslint", "nuxt-auth-sanctum", "nuxt-quasar-ui", "@pinia/nuxt"],
+  modules: ["@nuxt/eslint", "nuxt-auth-sanctum", "nuxt-quasar-ui", "@pinia/nuxt", "@samk-dev/nuxt-vcalendar"],
   runtimeConfig: {
     public: {
       API_ENDPOINT: process.env.NUXT_API_ENDPOINT
@@ -31,6 +31,6 @@ export default defineNuxtConfig({
     logLevel: 5
   },
   quasar: {
-    plugins: ['Notify']
+    plugins: ['Notify', 'Dialog']
   }
 })

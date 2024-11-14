@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.vc-day.on-right {
+    margin-left: 0;
+}
+
+.vc-day.on-left {
+    margin-right: 0;
+}

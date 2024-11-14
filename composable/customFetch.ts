@@ -34,9 +34,77 @@ export function useCustomFetch<T>() {
         })
     }
 
+    const post = (url: string, body?: Record<string, any>): Promise<any> => {
+        loading.value = true
+
+        return new Promise((resolve, reject) => {
+            client(url, {
+                baseURL: baseUrl,
+                method: 'POST',
+                body: body,
+                headers: headers,
+                onResponseError: (error: any) => {
+                    reject(error)
+                }
+            })
+            .then((response: any) => {
+                resolve(response)
+            })
+            .finally(() => {
+                loading.value = false
+            })
+        })
+    }
+
+    const put = (url: string, body?: Record<string, any>): Promise<any> => {
+        loading.value = true
+
+        return new Promise((resolve, reject) => {
+            client(url, {
+                baseURL: baseUrl,
+                method: 'PUT',
+                body: body,
+                headers: headers,
+                onResponseError: (error: any) => {
+                    reject(error)
+                }
+            })
+            .then((response: any) => {
+                resolve(response)
+            })
+            .finally(() => {
+                loading.value = false
+            })
+        })
+    }
+
+    const destroy = (url: string): Promise<any> => {
+        loading.value = true
+
+        return new Promise((resolve, reject) => {
+            client(url, {
+                baseURL: baseUrl,
+                method: 'DELETE',
+                headers: headers,
+                onResponseError: (error: any) => {
+                    reject(error)
+                }
+            })
+            .then((response: any) => {
+                resolve(response)
+            })
+            .finally(() => {
+                loading.value = false
+            })
+        })
+    }
+
     return {
         data,
         loading,
-        get
+        get,
+        post,
+        put,
+        destroy
     }
 }
