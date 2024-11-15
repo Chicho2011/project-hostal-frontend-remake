@@ -1,4 +1,4 @@
-FROM node:20.14.0 AS build-stage
+FROM docker.uclv.cu/node:20.14.0 AS build-stage
 
 #Directorio de trabajo
 WORKDIR /app
