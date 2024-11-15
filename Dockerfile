@@ -18,7 +18,7 @@ ENV NUXT_API_ENDPOINT=${NUXT_API_ENDPOINT}
 
 RUN npm run build
 
-FROM node:20.14.0 AS production-stage
+FROM docker.uclv.cu/node:20.14.0 AS production-stage
 
 # Crear directorio de trabajo
 WORKDIR /app
