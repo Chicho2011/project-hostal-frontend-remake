@@ -16,6 +16,9 @@ ENV NODE_OPTIONS="--max-old-space-size=8192"
 ARG NUXT_API_ENDPOINT
 ENV NUXT_API_ENDPOINT=${NUXT_API_ENDPOINT}
 
+ARG BASE
+ENV BASE=${BASE}
+
 RUN npm run build
 
 FROM docker.uclv.cu/node:20.14.0 AS production-stage
