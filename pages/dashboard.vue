@@ -91,7 +91,7 @@ function useNextEvents() {
             </div>
             <div class="tw-w-full tw-mt-20">
                 <h1 class="tw-text-2xl tw-font-bold">
-                    Próximas entradas del mes
+                    Entradas en los póximos 30 días
                 </h1>
                 <q-separator size="2px" color="gray"></q-separator>
             </div>
